@@ -29,7 +29,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\StartTerminalServiceController.cs" />
+    <Compile Remove="Controllers\WeatherForecastController.cs" />
+    <Compile Remove="WeatherForecast.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="ClientApp\package-lock.json" />
+    <None Remove="ClientApp\src\components\AboutContent.js" />
+    <None Remove="ClientApp\src\components\Counter.js" />
     <None Remove="ClientApp\src\components\Home.js" />
     <None Remove="ClientApp\src\components\Layout.js" />
     <None Remove="ClientApp\src\components\NavMenu.css" />
@@ -39,6 +47,9 @@
     <None Remove="ClientApp\src\custom.css" />
     <None Remove="ClientApp\src\pages\core\Core.js" />
     <None Remove="ClientApp\src\resources\About.txt" />
+    <None Remove="Controllers\Terminal - Copy.bat" />
+    <None Remove="Controllers\Terminal.bat" />
+    <None Remove="Controllers\teste.bat" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

@@ -16,7 +16,6 @@ import { Bibliography } from './pages/Bibliography';
 import { Remote } from './pages/Remote';
 import { UnderConstruction } from './pages/UnderConstruction';
 import { NoMatch } from './pages/NoMatch';
-import { abouttext } from './resources/About.txt';
 
 const items = [
   {
@@ -73,6 +72,7 @@ class App extends React.Component {
 
   render() {
     return (
+
       <React.Fragment>
         <Router>
           <NavigationBar />
@@ -82,18 +82,16 @@ class App extends React.Component {
 
             <Route exact path="/" component={Home} />
             <Route path="/about" component={About} />
-            <Route path="/abouttext" component={abouttext} />
 
-           
-              <Route path="/simulators" component={Simulators} />
-              <Route path="/experiments" component={UnderConstruction} />
-              <Route path="/bibliography" component={Bibliography} />
-              <Route path="/remote" component={UnderConstruction} />
-              <Route path="/underConstruction" component={UnderConstruction} />
-              <Route path="/profile" component={UnderConstruction} />
+            <Route path="/simulators" component={Simulators} />
+            <Route path="/experiments" component={UnderConstruction} />
+            <Route path="/bibliography" component={Bibliography} />
+            <Route path="/remote" component={UnderConstruction} />
+            <Route path="/underConstruction" component={UnderConstruction} />
+            <Route path="/profile" component={UnderConstruction} />
 
           </div>
-          <Rodape/>
+          <Rodape />
         </Router>
       </React.Fragment>
     );

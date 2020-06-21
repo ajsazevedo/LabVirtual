@@ -13,14 +13,29 @@ export default class Login extends Component {
       user: "",
       password: ""
     };
+
   }
 
   renderCall() {
-    return ({CallServer});
+    this.StartServer();
+    //return ({ CallServer });
   }
 
-  LogUser() {
-    this.renderCall();
+  objToQueryString(obj) {
+    const keyValuePairs = [];
+    for (let i = 0; i < Object.keys(obj).length; i += 1) {
+      keyValuePairs.push(`${encodeURIComponent(Object.keys(obj)[i])}=${encodeURIComponent(Object.values(obj)[i])}`);
+    }
+    return keyValuePairs.join('&');
+  }
+
+  async StartServer() {
+    const queryString = this.objToQueryString({
+      user: this.state.user,
+      password: this.state.password,
+    });
+    fetch(`terminal/Start?${queryString}`);
+    this.setState({ loading: false });
   }
 
   validateForm() {
@@ -33,8 +48,10 @@ export default class Login extends Component {
     });
   }
 
+
   handleSubmit = event => {
     event.preventDefault();
+    this.renderCall();
   }
 
   render() {
@@ -61,7 +78,7 @@ export default class Login extends Component {
             bsSize="large"
             disabled={!this.validateForm()}
             type="submit"
-            onclick={this.LogUser()}
+            onclick={this.handleSubmit}
           >
             Login
               </Button>
