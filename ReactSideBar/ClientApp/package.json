@@ -15,6 +15,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "guacamole-common-js": "1.1.0-b",
     "reactstrap": "^6.3.0",
     "rimraf": "^2.6.2"
   },
